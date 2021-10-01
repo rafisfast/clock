@@ -3,13 +3,16 @@ import React, {Component, createContext, useContext, useEffect, useRef, useState
 function Needle() {
     const seconds = useContext(TimeContext)
     const style = {
-        transform: 'rotate(' + seconds/60 * 360 + 'deg)',
-        background: 'red'
     }
 
     return (
-        <div className="main-needle" style={style}>
-            {seconds}
+        <div>
+            <div className="second-hand" style={{transform: 'rotate(' + seconds/60 * 360 + 'deg)'}}>
+                {seconds}
+            </div>
+            <div className="hour-hand" style={{transform: 'rotate(' + seconds/(60 * 60) * 360 + 'deg)'}}>
+                {seconds}
+            </div>
         </div>
     )
 }

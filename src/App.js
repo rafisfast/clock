@@ -1,9 +1,15 @@
-import React, {Component, useState} from 'react';
+import React, {Component, createContext, useContext, useEffect, useRef, useState} from 'react';
 
 function Needle() {
-    return (
-        <div className="main-needle">
+    const seconds = useContext(TimeContext)
+    const style = {
+        transform: 'rotate(' + seconds/60 * 360 + 'deg)',
+        background: 'red'
+    }
 
+    return (
+        <div className="main-needle" style={style}>
+            {seconds}
         </div>
     )
 }
@@ -16,12 +22,30 @@ function Base() {
     )
 }
 
+const TimeContext = createContext({Time: 0})
+
 function App() {
 
-return(
-    <div>
-        <Base />
-    </div>
+    const [seconds,setSeconds] = useState(0)
+    // const interval = useRef()
+    var interval
+
+    useEffect(() => {
+        interval = setInterval(() => {
+            console.log(seconds)
+            setSeconds(seconds=>seconds + 1)
+        }, 1000);
+        return () => {
+            clearInterval(interval)
+        }
+    },[])
+
+    return(
+        <TimeContext.Provider value={seconds}>
+            <div>
+                <Base />
+            </div>
+        </TimeContext.Provider>
     )
 }
 

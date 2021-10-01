@@ -10,7 +10,10 @@ function Needle() {
             <div className="second-hand" style={{transform: 'rotate(' + seconds/60 * 360 + 'deg)'}}>
                 {seconds}
             </div>
-            <div className="hour-hand" style={{transform: 'rotate(' + seconds/(60 * 60) * 360 + 'deg)'}}>
+            <div className="hour-hand" style={{transform: 'rotate(' + seconds/(60 * 60 * 24) * 360 + 'deg)'}}>
+                {seconds}
+            </div>
+            <div className="minute-hand" style={{transform: 'rotate(' + seconds/(60 * 60) * 360 + 'deg)'}}>
                 {seconds}
             </div>
         </div>

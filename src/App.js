@@ -1,39 +1,28 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 
-class Needle extends Component {
-
-  render() {
+function Needle() {
     return (
-      <div className="needle">
-        
-      </div>
-    )
-  }
+        <div className="main-needle">
 
+        </div>
+    )
 }
 
-class Base extends Component {
-
-  render() {
+function Base() {
     return (
-      <div className="base">
-        < Needle />
-      </div>
+       <div className="base">
+           <Needle />
+       </div>
     )
-  }
-
 }
 
-class App extends Component {
-  
-  render() {
-    return(
-      <div>
+function App() {
+
+return(
+    <div>
         <Base />
-      </div>
+    </div>
     )
-  }
-
 }
 
 export default App

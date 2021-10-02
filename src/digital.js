@@ -5,7 +5,6 @@ function DigitalBase() {
 
     return (
        <div className="digital-base">
-           hey im a digital clock
        </div>
     )
 }

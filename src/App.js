@@ -1,18 +1,38 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 import Analog from './analog';
+import Digital from './digital'
 
-export const VisibilityContext = createContext()
+export const VisibilityContext = createContext(false)
+export const TimeContext = createContext(0)
 
-export default function App() {
+function App() {
 
-  const [isAnalog,setisAnalog] = useState(true)
+    const [seconds,setSeconds] = useState(0)
+    const [isAnalog,setisAnalog] = useState(true)
+
+    var e = 0
+
+    useEffect(() => {
+        var interval = setInterval(() => {
+            console.log(seconds,e+1)
+            setSeconds(seconds=>seconds + 1)
+        }, 1000);
+        return () => {
+            clearInterval(interval)
+        }
+    },[])
 
   return (
     <div>
       <button onClick={()=>{setisAnalog(!isAnalog);console.log(isAnalog)}}>Switch Clock</button>
-      <VisibilityContext.Provider value={isAnalog}>
-        <Analog />
-      </VisibilityContext.Provider>
+      <TimeContext.Provider value={seconds}>
+        <VisibilityContext.Provider value={isAnalog}>
+            <Analog />
+            <Digital />
+        </VisibilityContext.Provider>
+      </TimeContext.Provider>
     </div>
   )
 }
+
+export default App

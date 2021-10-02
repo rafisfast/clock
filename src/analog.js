@@ -1,10 +1,8 @@
 import React, {Component, createContext, useContext, useEffect, useRef, useState} from 'react';
-import {VisibilityContext} from './App';
+import {VisibilityContext, TimeContext} from './App';
 
 function Needle() {
     const seconds = useContext(TimeContext)
-    const style = {
-    }
 
     return (
         <div>
@@ -30,25 +28,11 @@ function AnalogBase() {
     )
 }
 
-const TimeContext = createContext({Time: 0})
-
 function App() {
 
-    const [seconds,setSeconds] = useState(0)
-    const [isAnalog,setisAnalog] = useState(true)
     const isVisible = useContext(VisibilityContext)
+    const seconds = useContext(TimeContext)
     // const interval = useRef()
-    var interval
-
-    useEffect(() => {
-        interval = setInterval(() => {
-            console.log(seconds)
-            setSeconds(seconds=>seconds + 1)
-        }, 1000);
-        return () => {
-            clearInterval(interval)
-        }
-    },[])
 
     return(
         <TimeContext.Provider value={seconds}>

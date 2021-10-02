@@ -43,7 +43,7 @@ body {
   position: absolute;
 }
 
-.base {
+.analog-base {
   border-radius: 50%;
   background-color: rgb(148, 148, 148);
   width: 200px;

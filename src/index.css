@@ -46,13 +46,31 @@ body {
   animation: rotate 60s infinite steps(60);
 }
 
+.minute-hand, .hour-hand, .second-hand {
+  z-index: 50;
+}
+
 .analog-base {
   border-radius: 50%;
-  background-color: rgb(148, 148, 148);
+  background: rgb(148, 148, 148) url(./images/ios_clock.svg) no-repeat center;
   width: 200px;
   height: 200px;
   filter: drop-shadow(0px 0px 5px rgb(117, 102, 103));
-  border: 7px solid rgb(66, 66, 66)
+  border: 7px solid rgb(66, 66, 66);
+  background-size: 95%;
+}
+
+.analog-base:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
 }
 
 .digital-base {

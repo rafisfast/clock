@@ -14,7 +14,7 @@ function Needle() {
                 {seconds}
             </div>
             <div className="hour-hand" style={{transform: 'rotate(' + hours/12 * 360 + 'deg)'}}>
-                {hours}
+                {hours - 12}
             </div>
             <div className="minute-hand" style={{transform: 'rotate(' + minutes/60 * 360 + 'deg)'}}>
                 {minutes}

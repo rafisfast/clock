@@ -7,14 +7,17 @@ export const TimeContext = createContext(0)
 
 function App() {
 
-    const [seconds,setSeconds] = useState(0)
+    const date = new Date();
+    date.toLocaleString('en-GB', { timeZone: 'Europe/London' })
+
+    // const [seconds,setSeconds] = useState((date.getDate()/ 1000) % 60)
+    const [seconds,setSeconds] = useState(1 * 60 * 60)
     const [isAnalog,setisAnalog] = useState(true)
 
     var e = 0
 
     useEffect(() => {
         var interval = setInterval(() => {
-            console.log(seconds,e+1)
             setSeconds(seconds=>seconds + 1)
         }, 1000);
         return () => {

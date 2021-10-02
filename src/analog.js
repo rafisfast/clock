@@ -2,18 +2,22 @@ import React, {Component, createContext, useContext, useEffect, useRef, useState
 import {VisibilityContext, TimeContext} from './App';
 
 function Needle() {
-    const seconds = useContext(TimeContext)
+
+    const time = useContext(TimeContext)
+    const seconds = time.seconds
+    const minutes = time.minutes
+    const hours = time.hours
 
     return (
         <div>
             <div className="second-hand" style={{transform: 'rotate(' + seconds/60 * 360 + 'deg)'}}>
                 {seconds}
             </div>
-            <div className="hour-hand" style={{transform: 'rotate(' + seconds/(60 * 60 * 12) * 360 + 'deg)'}}>
-                {seconds}
+            <div className="hour-hand" style={{transform: 'rotate(' + hours/12 * 360 + 'deg)'}}>
+                {hours}
             </div>
-            <div className="minute-hand" style={{transform: 'rotate(' + seconds/(60 * 60) * 360 + 'deg)'}}>
-                {seconds}
+            <div className="minute-hand" style={{transform: 'rotate(' + minutes/60 * 360 + 'deg)'}}>
+                {minutes}
             </div>
         </div>
     )

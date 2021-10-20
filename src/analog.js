@@ -36,17 +36,10 @@ function AnalogBase() {
 function App() {
 
     const isVisible = useContext(VisibilityContext)
-    const seconds = useContext(TimeContext)
     // const interval = useRef()
 
     return(
-        <TimeContext.Provider value={seconds}>
-            {isVisible &&
-                <div>
-                    <AnalogBase />
-                </div>
-            }
-        </TimeContext.Provider>
+        isVisible && <AnalogBase />
     )
 }
 

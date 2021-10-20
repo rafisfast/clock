@@ -89,9 +89,3 @@ body {
   height: 5%;
   z-index: 10;
 }
-
-.digital-base {
-  width:200px;
-  height:60px;
-  background-color: rgb(148, 148, 148);
-}

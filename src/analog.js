@@ -1,5 +1,6 @@
 import React, {Component, createContext, useContext, useEffect, useRef, useState} from 'react';
 import {VisibilityContext, TimeContext} from './App';
+import './analog.css'
 
 function Needle() {
 
@@ -9,7 +10,7 @@ function Needle() {
     const hours = time.hours
 
     return (
-        <div>
+        <div className="bucket">
             <div className="second-hand" style={{transform: 'rotate(' + seconds/60 * 360 + 'deg)'}}>
                 {/* {seconds} */}
             </div>

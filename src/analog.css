@@ -17,7 +17,8 @@ body {
   left: 50%;
   top: 15%;
   position: absolute;
-  animation: rotate 43200s infinite steps(60);
+  -webkit-animation: rotate 43200s infinite steps(60);
+          animation: rotate 43200s infinite steps(60);
 }
 
 .minute-hand {
@@ -29,8 +30,8 @@ body {
   /* transition: transform 1000ms cubic-bezier(.32,0,.07,1); */
   left: 50%;
   top: 5%;
-  position: absolute;
-  animation: rotate 3600s infinite steps(60);
+  -webkit-animation: rotate 3600s infinite steps(60);
+          animation: rotate 3600s infinite steps(60);
 }
 
 .hour-hand {
@@ -42,12 +43,18 @@ body {
   /* transition: transform 1000ms cubic-bezier(.32,0,.07,1); */
   left: 50%;
   top: 10%;
-  position: absolute;
-  animation: rotate 60s infinite steps(60);
+  -webkit-animation: rotate 60s infinite steps(60);
+          animation: rotate 60s infinite steps(60);
 }
 
 .minute-hand, .hour-hand, .second-hand {
   z-index: 50;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right:0;
+  text-align: center;
 }
 
 .analog-base {
@@ -55,9 +62,19 @@ body {
   background: rgb(148, 148, 148) url(./images/ios_clock.svg) no-repeat center;
   width: 200px;
   height: 200px;
-  filter: drop-shadow(0px 0px 5px rgb(117, 102, 103));
+  -webkit-filter: drop-shadow(0px 0px 5px rgb(117, 102, 103));
+          filter: drop-shadow(0px 0px 5px rgb(117, 102, 103));
   border: 7px solid rgb(66, 66, 66);
   background-size: 95%;
+  position: relative;
+}
+
+.bucket {
+  width:100%;
+  height:100%;
+  text-align:center;
+  display: grid;
+  position: relative;
 }
 
 .analog-base:after {

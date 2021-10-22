@@ -14,11 +14,7 @@ body {
   transform-origin: 0% 100%;
   border-radius: 10%;
   /* transition: transform 1000ms cubic-bezier(.32,0,.07,1); */
-  left: 50%;
-  top: 15%;
   position: absolute;
-  -webkit-animation: rotate 43200s infinite steps(60);
-          animation: rotate 43200s infinite steps(60);
 }
 
 .minute {
@@ -28,10 +24,6 @@ body {
   transform-origin: 0% 100%;
   border-radius: 10%;
   /* transition: transform 1000ms cubic-bezier(.32,0,.07,1); */
-  left: 50%;
-  top: 5%;
-  -webkit-animation: rotate 3600s infinite steps(60);
-          animation: rotate 3600s infinite steps(60);
 }
 
 .hour {
@@ -41,20 +33,15 @@ body {
   transform-origin: 0% 100%;
   border-radius: 10%;
   /* transition: transform 1000ms cubic-bezier(.32,0,.07,1); */
-  left: 50%;
-  top: 10%;
-  -webkit-animation: rotate 60s infinite steps(60);
-          animation: rotate 60s infinite steps(60);
+
 }
 
 .hand {
-  z-index: 50;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right:0;
-  text-align: center;
+  left: calc(50% - 2.5px);
+  top: 50%;
+  width: 5px;
+  transform-origin: center 0;
 }
 
 .analog-base {
@@ -76,6 +63,7 @@ body {
   text-align:center;
   display: grid;
   position: relative;
+  transform: rotate(180deg);
 }
 
 .analog-base:after {

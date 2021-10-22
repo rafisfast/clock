@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.second-hand {
+.second {
   background-color: red;
   width: 1%;
   height:35%;
@@ -21,7 +21,7 @@ body {
           animation: rotate 43200s infinite steps(60);
 }
 
-.minute-hand {
+.minute {
   background-color: rgb(73, 73, 73);
   width: 1%;
   height:45%;
@@ -34,7 +34,7 @@ body {
           animation: rotate 3600s infinite steps(60);
 }
 
-.hour-hand {
+.hour {
   background-color: rgb(73, 73, 73);
   width: 1%;
   height:40%;
@@ -47,7 +47,7 @@ body {
           animation: rotate 60s infinite steps(60);
 }
 
-.minute-hand, .hour-hand, .second-hand {
+.hand {
   z-index: 50;
   position: absolute;
   margin-left: auto;

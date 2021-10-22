@@ -13,7 +13,7 @@ function DigitalBase() {
        <div className="digital-base">
            <div className="digital-time">
                 <div className="digital-time-text">
-                    {`${format(time.hours)} : ${format(time.minutes)} : ${format(time.seconds)}`}
+                    <h1>{`${format(time.hours)} : ${format(time.minutes)} : ${format(time.seconds)}`}</h1>
                 </div>
             </div>
        </div>
@@ -25,11 +25,9 @@ function App() {
     const isVisible = useContext(VisibilityContext)
 
     return(
-        <div>
-            {!isVisible &&
-                <DigitalBase />
-            }
-        </div>
+        !isVisible &&
+            <DigitalBase />
+        
     )
 }
 

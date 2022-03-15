@@ -2,6 +2,9 @@
 
 A analog and digital clock using ReactJS.
 
+## View live
+https://r-clock.herokuapp.com
+
 ## To run use
 
 In the project directory, you can run:
